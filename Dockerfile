@@ -6,8 +6,4 @@ RUN sed -i 's/http\:\/\/deb.debian.org/https\:\/\/mirrors.aliyun.com/g' /etc/apt
  && apt-get install -y curl gcc vim libpq-dev \
  && apt-get install -y snmptt openssh-client iperf3 scanssh mtr \
  && rm -rf /var/lib/apt/lists/*
-RUN pip3 install --upgrade pip --no-cache-dir  -i https://mirrors.aliyun.com/pypi/simple/
-RUN pip3 install --no-cache-dir  -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com \
-                                 -r /tmp/requirements.txt && rm -rf /tmp/requirements.txt
-COPY . .
 CMD ["/bin/bash"]
